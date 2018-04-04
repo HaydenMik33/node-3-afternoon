@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { json } = require("body-parser");
-const port = 3001;
+const port = 3000;
 const session = require("express-session");
 require("dotenv").config();
 
@@ -39,7 +39,7 @@ app.post("/api/cart/checkout", cart_controller.checkout);
 app.delete("/api/cart", cart_controller.delete);
 
 //search
-app.get("api/search", search_controller.search);
+app.get("/api/search", search_controller.search);
 
 app.listen(port, () => {
   console.log(`listening on the ${port}`);
